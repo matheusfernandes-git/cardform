@@ -1,0 +1,15 @@
+.container_page{
+    display: flex;
+    position: relative;
+}
+
+.container_card{
+    position: relative;
+    background-color: purple;
+    width: 500px;
+    height: 100vh;
+}
+
+.container_form_page{
+    margin: auto;
+}

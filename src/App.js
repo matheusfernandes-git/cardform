@@ -1,10 +1,11 @@
-import Form from 'components/Form';
-import './App.css';
+import Form from "components/Form";
+import "./App.css";
+import CardPage from "pages/CardPage";
 
 function App() {
   return (
-    <div className="App">
-      <Form />
+    <div>
+      <CardPage />
     </div>
   );
 }

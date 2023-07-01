@@ -1,0 +1,19 @@
+.back_card{
+    position: absolute;
+    background-image: url('assets/bg-card-back.png');
+    background-repeat: no-repeat;
+    height: 245px;
+    width: 445px;
+    top: 52%;
+    left: 14%;
+}
+
+.back_card span{
+    display: flex;
+    color: #fff;
+    position: absolute;
+    top: 45%;
+    left: 79%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

@@ -1,4 +1,6 @@
-export default function TextFild({
+import styles from "./style.module.css";
+
+export default function TextField({
   type,
   label,
   placeholder,
@@ -10,7 +12,7 @@ export default function TextFild({
   };
 
   return (
-    <>
+    <div className={styles.text_fild}>
       <label>{label}</label>
       <input
         type={type}
@@ -18,6 +20,6 @@ export default function TextFild({
         value={value}
         onChange={handleChange}
       />
-    </>
+    </div>
   );
 }
