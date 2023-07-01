@@ -2,7 +2,6 @@ import TextField from "components/TextField";
 import { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import SmallerTextField from "components/SmallerTextField";
-import Card from "components/Card";
 import MyContext from "components/context";
 
 export default function Form() {
