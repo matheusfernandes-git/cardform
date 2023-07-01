@@ -15,6 +15,7 @@ export default function TextField({
     <div className={styles.text_fild}>
       <label>{label}</label>
       <input
+        required
         type={type}
         placeholder={placeholder}
         value={value}

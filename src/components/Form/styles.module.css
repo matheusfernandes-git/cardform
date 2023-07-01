@@ -19,3 +19,15 @@
     align-items: center;
     margin-top: 20px;
 }
+
+.span_required{
+    color: red;
+    display: inline;
+}
+
+@media(max-width: 1200px){
+    .form{
+        padding-top: 100px;
+        gap: 5px;
+    }
+}

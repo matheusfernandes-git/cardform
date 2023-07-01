@@ -8,7 +8,7 @@
     flex-direction: column;
     top: 23%;
     left: 10%;
-    width: 445px;
+    width: 449px;
     height: 250px;
     border-radius: 10px;
 }
@@ -57,4 +57,69 @@
 
 .infos span{
     color: #fff;
+}
+
+.back_card{
+    position: absolute;
+    background-image: url('assets/bg-card-back.png');
+    background-repeat: no-repeat;
+    height: 245px;
+    width: 450px;
+    top: 52%;
+    left: 14%;
+}
+
+.back_card span{
+    display: flex;
+    color: #fff;
+    position: absolute;
+    top: 45%;
+    left: 79%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+@media(max-width: 768px){
+    .container{
+        margin: auto;
+    }
+
+    .card{
+        width: 400px;
+        border-radius: 15px;
+    }
+
+    .container_extras{
+        width: 342px;
+    }
+
+    .infos{
+        width: 340px;
+    }
+
+    .back_card{
+        background-position: center;
+        width: 400px;
+        border-radius: 15px;
+    }
+}
+
+@media(max-width: 1200px){
+    .container{
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+    }
+
+    .card{
+        z-index: 100;
+        top: 23% ;
+        left: 18%;
+    }
+
+    .back_card{
+        top: 4%;
+        left: 30%
+    }
 }

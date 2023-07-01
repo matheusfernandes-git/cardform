@@ -1,16 +1,27 @@
 import TextField from "components/TextField";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import SmallerTextField from "components/SmallerTextField";
+import Card from "components/Card";
+import MyContext from "components/context";
 
 export default function Form() {
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [date, setDate] = useState("");
-  const [cvc, setCvc] = useState("");
+  const { name, number, date, cvc, setName, setNumber, setDate, setCvc } =
+    useContext(MyContext);
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validar o número do cartão
+    if (number.length < 16) {
+      setError("Card number should be at least 16 digits.");
+      return;
+    }
+
+    // Se passar pela validação, limpar o erro e prosseguir com o envio do formulário
+    setError("");
+    // ...
   };
 
   return (
@@ -31,6 +42,7 @@ export default function Form() {
           placeholder="ex 1234 5678 9123 0000"
           handleValue={(value) => setNumber(value)}
         />
+        {error && <span style={{ color: "red" }}>{error}</span>}
         <div className={styles.container_smaller_inputs}>
           <SmallerTextField
             type="number"
@@ -46,6 +58,7 @@ export default function Form() {
             placeholder="ex 123"
             handleValue={(value) => setCvc(value)}
           />
+          {error && <span style={{ color: "red" }}>{error}</span>}
         </div>
         <button className="mt-4" type="submit">
           Confirm
