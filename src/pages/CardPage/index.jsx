@@ -24,5 +24,4 @@ export default function CardPage() {
   );
 }
 
-// values={values}
 // addValues={addValues}
