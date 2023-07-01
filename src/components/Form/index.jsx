@@ -12,8 +12,7 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Validar o número do cartão
+
     if (number.length < 16) {
       setError("Card number should be at least 16 digits.");
       return;
@@ -21,7 +20,6 @@ export default function Form() {
 
     // Se passar pela validação, limpar o erro e prosseguir com o envio do formulário
     setError("");
-    // ...
   };
 
   return (
