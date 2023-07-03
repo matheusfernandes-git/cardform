@@ -1,5 +1,9 @@
-.text_fild{
+.text_field{
     margin-top: 20px;
+}
+
+.smaller_text_field .text_field input {
+    width: 100px;
 }
 
 input{

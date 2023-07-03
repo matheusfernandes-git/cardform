@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import MyContext from "components/context";
 
 const Card = () => {
-  const { name, number, date, cvc } = useContext(MyContext);
+  const { name, number, month, year, cvc, showSlash } = useContext(MyContext);
 
   return (
     <section className={styles.container}>
@@ -17,8 +17,8 @@ const Card = () => {
             <h2>{number}</h2>
           </div>
           <div className={styles.infos}>
-            <span>{name}</span>
-            <span>{date}</span>
+            <span>{`${name.toUpperCase()}`}</span>
+            {showSlash && <span>{`${month}/${year}`}</span>}
           </div>
         </div>
       </div>

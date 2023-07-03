@@ -4,12 +4,27 @@ import MyContext from "..";
 const MyProvider = ({ children }) => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
-  const [date, setDate] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
+  const [showSlash, setShowSlash] = useState(false);
 
   return (
     <MyContext.Provider
-      value={{ name, setName, number, setNumber, date, setDate, cvc, setCvc }}
+      value={{
+        name,
+        setName,
+        number,
+        setNumber,
+        month,
+        setMonth,
+        year,
+        setYear,
+        cvc,
+        setCvc,
+        showSlash,
+        setShowSlash
+      }}
     >
       {children}
     </MyContext.Provider>

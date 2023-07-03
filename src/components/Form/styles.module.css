@@ -20,9 +20,8 @@
     margin-top: 20px;
 }
 
-.span_required{
-    color: red;
-    display: inline;
+.container_smaller_inputs input{
+    width: 180px;
 }
 
 @media(max-width: 1200px){

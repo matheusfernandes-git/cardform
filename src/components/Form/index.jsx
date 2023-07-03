@@ -1,24 +1,72 @@
 import TextField from "components/TextField";
 import { useContext, useState } from "react";
 import styles from "./styles.module.css";
-import SmallerTextField from "components/SmallerTextField";
 import MyContext from "components/context";
+import DateInput from "components/DateInput";
 
 export default function Form() {
-  const { name, number, date, cvc, setName, setNumber, setDate, setCvc } =
-    useContext(MyContext);
-  const [error, setError] = useState("");
+  const {
+    name,
+    number,
+    month,
+    year,
+    cvc,
+    setName,
+    setNumber,
+    setMonth,
+    setYear,
+    setCvc,
+    setShowSlash,
+  } = useContext(MyContext);
+  const [error, setError] = useState({});
+
+  const validateCardNumber = () => {
+    if (number.length !== 16) {
+      setError((error) => ({
+        ...error,
+        number: "O número do cartão precisa ter 16 dígitos.",
+      }));
+    } else {
+      setError((error) => ({
+        ...error,
+        number: "",
+      }));
+    }
+  };
+
+  const validateCardCvc = () => {
+    if (cvc.length !== 3) {
+      setError((prevError) => ({
+        ...prevError,
+        cvc: "O número cvc precisa ter pelo menos 3 dígitos.",
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        cvc: "",
+      }));
+    }
+  };
+
+  const handleMonthChange = (value) => {
+    setMonth(value);
+    setShowSlash(value !== "");
+  };
+
+  const handleYearChange = (value) => {
+    setYear(value);
+    setShowSlash(value !== "");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    validateCardNumber();
+    validateCardCvc();
 
-    if (number.length < 16) {
-      setError("Card number should be at least 16 digits.");
-      return;
-    }
-
-    // Se passar pela validação, limpar o erro e prosseguir com o envio do formulário
-    setError("");
+    // setName("");
+    // setNumber("");
+    // setDate("");
+    // setCvc("");
   };
 
   return (
@@ -39,23 +87,32 @@ export default function Form() {
           placeholder="ex 1234 5678 9123 0000"
           handleValue={(value) => setNumber(value)}
         />
-        {error && <span style={{ color: "red" }}>{error}</span>}
+        {error.number && <span style={{ color: "red" }}>{error.number}</span>}
         <div className={styles.container_smaller_inputs}>
-          <SmallerTextField
-            type="number"
-            label="DATE (MM/YY)"
-            value={date}
-            placeholder="type your card date"
-            handleValue={(value) => setDate(value)}
+          <DateInput
+            label="MONTH"
+            value={month}
+            placeholder="MM"
+            handleValue={handleMonthChange}
           />
-          <SmallerTextField
-            type="number"
-            label="CVC"
-            value={cvc}
-            placeholder="ex 123"
-            handleValue={(value) => setCvc(value)}
+          <DateInput
+            label="YEAR"
+            value={year}
+            placeholder="YY"
+            handleValue={handleYearChange}
           />
-          {error && <span style={{ color: "red" }}>{error}</span>}
+          <div className={styles.container_cvc}>
+            <label>CVC</label>
+            <input
+              required
+              type="number"
+              label="CVC"
+              value={cvc}
+              placeholder="ex 123"
+              onChange={(e) => setCvc(e.target.value)}
+            />
+            {error.cvc && <span style={{ color: "red" }}>{error.cvc}</span>}
+          </div>
         </div>
         <button className="mt-4" type="submit">
           Confirm

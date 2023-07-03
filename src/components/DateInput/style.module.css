@@ -1,0 +1,8 @@
+/* .input_group {
+    display: flex;
+    align-items: center;
+} */
+
+.input_group input{
+    width: 100px;
+}

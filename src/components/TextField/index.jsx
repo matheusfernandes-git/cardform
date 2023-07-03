@@ -12,7 +12,7 @@ export default function TextField({
   };
 
   return (
-    <div className={styles.text_fild}>
+    <div className={styles.text_field}>
       <label>{label}</label>
       <input
         required
