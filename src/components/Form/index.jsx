@@ -1,7 +1,7 @@
 import TextField from "components/TextField";
 import { useContext, useState } from "react";
 import styles from "./styles.module.css";
-import MyContext from "components/context";
+import { MyContext } from "components/context";
 import DateInput from "components/DateInput";
 
 export default function Form({ onSubmit }) {
@@ -38,7 +38,7 @@ export default function Form({ onSubmit }) {
     if (cvc.length !== 3) {
       setError((prevError) => ({
         ...prevError,
-        cvc: "O número cvc precisa ter pelo menos 3 dígitos.",
+        cvc: "O número cvc precisa ter 3 dígitos.",
       }));
     } else {
       setError((prevError) => ({
@@ -63,7 +63,7 @@ export default function Form({ onSubmit }) {
     validateCardNumber();
     validateCardCvc();
 
-    if(number.length === 16 && cvc.length === 3){
+    if (number.length === 16 && cvc.length === 3) {
       onSubmit({
         name,
         number,
@@ -72,7 +72,6 @@ export default function Form({ onSubmit }) {
         cvc,
       });
     }
-
 
     // setName("");
     // setNumber("");
@@ -123,7 +122,11 @@ export default function Form({ onSubmit }) {
               placeholder="ex 123"
               onChange={(e) => setCvc(e.target.value)}
             />
-            {error.cvc && <span style={{ color: "red" }}>{error.cvc}</span>}
+            {error.cvc && (
+              <span className={styles.teste} style={{ color: "red" }}>
+                {error.cvc}
+              </span>
+            )}
           </div>
         </div>
         <button className="mt-4" type="submit">

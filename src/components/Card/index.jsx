@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import styles from "./styles.module.css";
-import MyContext from "components/context";
+import { MyContext } from "components/context";
 
-export default function Card(){
+export default function Card() {
   const { name, number, month, year, cvc, showSlash } = useContext(MyContext);
 
-    // Remove todos os espaços em branco do número do cartão
-    const strippedNumber = number.replace(/\s/g, '');
-  
-    // Adiciona um espaço a cada 4 dígitos usando uma expressão regular
-    const formattedNumber = strippedNumber.replace(/\d{4}(?=.)/g, '$& ');
+  // Remove todos os espaços em branco do número do cartão
+  const strippedNumber = number.replace(/\s/g, "");
+
+  // Adiciona um espaço a cada 4 dígitos usando uma expressão regular
+  const formattedNumber = strippedNumber.replace(/\d{4}(?=.)/g, "$& ");
 
   return (
     <section className={styles.container}>
@@ -35,4 +35,4 @@ export default function Card(){
       </div>
     </section>
   );
-};
+}

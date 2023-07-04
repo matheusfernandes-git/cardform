@@ -1,7 +1,7 @@
 import { useState } from "react";
-import MyContext from "..";
+import { MyContext } from "..";
 
-const MyProvider = ({ children }) => {
+export const MyProvider = ({ children }) => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [month, setMonth] = useState("");
@@ -31,4 +31,3 @@ const MyProvider = ({ children }) => {
   );
 };
 
-export { MyProvider };

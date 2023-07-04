@@ -5,27 +5,23 @@ import { MyProvider } from "components/context/Provider";
 import { BiArrowBack } from "react-icons/bi";
 import { useContext, useState } from "react";
 import imgComplete from "assets/icon-complete.svg";
-import MyContext from "components/context";
+import { MyContext } from "components/context";
 
 export default function CardPage() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  // const { setName, setNumber, setMonth, setYear, setCvc } = useContext(MyContext);
-  const handleSubmit = (data) => {
-    // setName(data.name);
-    // setNumber(data.number);
-    // setMonth(data.month);
-    // setYear(data.year);
-    // setCvc(data.cvc);
+  const { setName, setNumber, setMonth, setYear, setCvc } =
+    useContext(MyContext);
+  const handleSubmit = () => {
     setIsFormSubmitted(true);
   };
 
   const handleGoBack = () => {
     setIsFormSubmitted(!isFormSubmitted);
-    // setName("");
-    // setNumber("");
-    // setMonth("");
-    // setYear("");
-    // setCvc("");
+    setName("");
+    setNumber("");
+    setMonth("");
+    setYear("");
+    setCvc("");
   };
 
   return (
@@ -41,7 +37,7 @@ export default function CardPage() {
                 <h1>THANK YOU!</h1>
                 <p>We've added your card details</p>
                 <button className={styles.back_button} onClick={handleGoBack}>
-                  <BiArrowBack size={22} /> 
+                  <BiArrowBack size={22} />
                   Voltar
                 </button>
               </div>
