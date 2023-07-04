@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 import imgComplete from "assets/icon-complete.svg";
 import MyContext from "components/context";
 
-
 export default function CardPage() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   // const { setName, setNumber, setMonth, setYear, setCvc } = useContext(MyContext);
@@ -26,13 +25,13 @@ export default function CardPage() {
     // setMonth("");
     // setYear("");
     // setCvc("");
-  }
+  };
 
   return (
     <MyProvider>
-    <section>
-      <div className={styles.container_page}>
-        <div className={styles.container_card}></div>
+      <section>
+        <div className={styles.container_page}>
+          <div className={styles.container_card}></div>
           {isFormSubmitted ? (
             <section>
               <Card />
@@ -40,10 +39,7 @@ export default function CardPage() {
                 <img src={imgComplete} alt="ícone de completo" />
                 <h1>THANK YOU!</h1>
                 <p>We've added your card details</p>
-                <button
-                  className={styles.back_button}
-                  onClick={handleGoBack}
-                >
+                <button className={styles.back_button} onClick={handleGoBack}>
                   Voltar
                 </button>
               </div>
@@ -56,8 +52,8 @@ export default function CardPage() {
               </div>
             </div>
           )}
-      </div>
-    </section>
+        </div>
+      </section>
     </MyProvider>
   );
 }
