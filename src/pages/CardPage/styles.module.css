@@ -32,6 +32,19 @@
     font-size: 30px;
 }
 
+.back_button{
+    text-decoration: none;
+    background-color: rgb(68, 0, 68);
+    color: #fff;
+    padding:  15px 100px;
+    border-radius: 7px;
+    border: none;
+}
+
+.back_button:hover{
+    opacity: 0.8;
+}
+
 @media(max-width: 1200px){
     .container_page{
         flex-direction: column;

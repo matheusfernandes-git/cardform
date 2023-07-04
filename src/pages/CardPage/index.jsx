@@ -2,21 +2,37 @@ import Card from "components/Card";
 import Form from "components/Form";
 import styles from "./styles.module.css";
 import { MyProvider } from "components/context/Provider";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import imgComplete from "assets/icon-complete.svg";
+import MyContext from "components/context";
+
 
 export default function CardPage() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [formData, setFormData] = useState(null);
+  // const { setName, setNumber, setMonth, setYear, setCvc } = useContext(MyContext);
   const handleSubmit = (data) => {
-    setFormData(data);
+    // setName(data.name);
+    // setNumber(data.number);
+    // setMonth(data.month);
+    // setYear(data.year);
+    // setCvc(data.cvc);
     setIsFormSubmitted(true);
   };
+
+  const handleGoBack = () => {
+    setIsFormSubmitted(!isFormSubmitted);
+    // setName("");
+    // setNumber("");
+    // setMonth("");
+    // setYear("");
+    // setCvc("");
+  }
+
   return (
+    <MyProvider>
     <section>
       <div className={styles.container_page}>
         <div className={styles.container_card}></div>
-        <MyProvider>
           {isFormSubmitted ? (
             <section>
               <Card />
@@ -24,7 +40,12 @@ export default function CardPage() {
                 <img src={imgComplete} alt="ícone de completo" />
                 <h1>THANK YOU!</h1>
                 <p>We've added your card details</p>
-                <button>Voltar</button>
+                <button
+                  className={styles.back_button}
+                  onClick={handleGoBack}
+                >
+                  Voltar
+                </button>
               </div>
             </section>
           ) : (
@@ -35,8 +56,8 @@ export default function CardPage() {
               </div>
             </div>
           )}
-        </MyProvider>
       </div>
     </section>
+    </MyProvider>
   );
 }
