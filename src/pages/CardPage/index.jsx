@@ -2,6 +2,7 @@ import Card from "components/Card";
 import Form from "components/Form";
 import styles from "./styles.module.css";
 import { MyProvider } from "components/context/Provider";
+import { BiArrowBack } from "react-icons/bi";
 import { useContext, useState } from "react";
 import imgComplete from "assets/icon-complete.svg";
 import MyContext from "components/context";
@@ -40,6 +41,7 @@ export default function CardPage() {
                 <h1>THANK YOU!</h1>
                 <p>We've added your card details</p>
                 <button className={styles.back_button} onClick={handleGoBack}>
+                  <BiArrowBack size={22} /> 
                   Voltar
                 </button>
               </div>

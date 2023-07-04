@@ -4,7 +4,7 @@
 }
 
 .container_card{
-    background-color: purple;
+    background: linear-gradient(180deg, purple 0%, rgb(95, 4, 95) 50%, rgb(49, 0, 49) 100%);
     width: 500px;
     height: 100vh;
 }
@@ -33,12 +33,14 @@
 }
 
 .back_button{
+    display: flex;
     text-decoration: none;
     background-color: rgb(68, 0, 68);
     color: #fff;
     padding:  15px 100px;
     border-radius: 7px;
     border: none;
+    gap: 8px;
 }
 
 .back_button:hover{
