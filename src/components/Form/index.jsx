@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import MyContext from "components/context";
 import DateInput from "components/DateInput";
 
-export default function Form() {
+export default function Form({ onSubmit }) {
   const {
     name,
     number,
@@ -63,6 +63,15 @@ export default function Form() {
     validateCardNumber();
     validateCardCvc();
 
+    onSubmit({
+      name,
+      number,
+      month,
+      year,
+      cvc,
+    });
+
+    // navigate('/finished');
     // setName("");
     // setNumber("");
     // setDate("");

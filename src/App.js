@@ -1,12 +1,14 @@
-import Form from "components/Form";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CardPage from "pages/CardPage";
 
 function App() {
   return (
-    <div>
-      <CardPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CardPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
