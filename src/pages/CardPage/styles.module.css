@@ -47,6 +47,10 @@
     opacity: 0.8;
 }
 
+@media(max-width: 768px){
+    
+}
+
 @media(max-width: 1200px){
     .container_page{
         flex-direction: column;

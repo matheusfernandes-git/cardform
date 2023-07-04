@@ -64,13 +64,7 @@ export default function Form({ onSubmit }) {
     validateCardCvc();
 
     if (number.length === 16 && cvc.length === 3) {
-      onSubmit({
-        name,
-        number,
-        month,
-        year,
-        cvc,
-      });
+      onSubmit();
     }
 
     // setName("");

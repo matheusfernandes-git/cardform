@@ -9,19 +9,23 @@ import { MyContext } from "components/context";
 
 export default function CardPage() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const { setName, setNumber, setMonth, setYear, setCvc } =
-    useContext(MyContext);
-  const handleSubmit = () => {
-    setIsFormSubmitted(true);
-  };
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   number: "",
+  //   month: "",
+  //   year: "",
+  //   cvc: ""
+  // });
 
-  const handleGoBack = () => {
+  const handleGoBack = (value) => {
     setIsFormSubmitted(!isFormSubmitted);
-    setName("");
-    setNumber("");
-    setMonth("");
-    setYear("");
-    setCvc("");
+    //   setFormData({
+    //   name: "",
+    //   number: "",
+    //   month: "",
+    //   year: "",
+    //   cvc: ""
+    // });
   };
 
   return (
@@ -29,7 +33,14 @@ export default function CardPage() {
       <section>
         <div className={styles.container_page}>
           <div className={styles.container_card}></div>
-          {isFormSubmitted ? (
+          {!isFormSubmitted ? (
+            <div className={styles.container_form_page}>
+              <div>
+                <Card />
+                <Form onSubmit={() => setIsFormSubmitted(!isFormSubmitted)} />
+              </div>
+            </div>
+          ) : (
             <section>
               <Card />
               <div className={styles.container_finished}>
@@ -42,13 +53,6 @@ export default function CardPage() {
                 </button>
               </div>
             </section>
-          ) : (
-            <div className={styles.container_form_page}>
-              <div>
-                <Card />
-                <Form onSubmit={handleSubmit} />
-              </div>
-            </div>
           )}
         </div>
       </section>
