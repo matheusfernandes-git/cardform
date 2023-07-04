@@ -22,13 +22,13 @@ export default function Form({ onSubmit }) {
 
   const validateCardNumber = () => {
     if (number.length !== 16) {
-      setError((error) => ({
-        ...error,
+      setError((prevError) => ({
+        ...prevError,
         number: "O número do cartão precisa ter 16 dígitos.",
       }));
     } else {
-      setError((error) => ({
-        ...error,
+      setError((prevError) => ({
+        ...prevError,
         number: "",
       }));
     }
