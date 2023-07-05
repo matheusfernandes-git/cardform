@@ -27,7 +27,13 @@
     margin-top: 30px;
 }
 
-@media (max-width: 480px){
+.cvc_error{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (max-width: 448px){
     .form{
         margin-top: 30px;
         gap: 5px;
@@ -41,9 +47,15 @@
     .btn_submit{
         width: 310px;
     }
+
+    .cvc_error{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
-@media(min-width: 480px) and (max-width: 1220px){
+@media(min-width: 448px) and (max-width: 1220px){
     .form{
         padding-top: 100px;
         gap: 5px;

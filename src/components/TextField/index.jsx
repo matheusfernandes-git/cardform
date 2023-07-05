@@ -6,6 +6,7 @@ export default function TextField({
   placeholder,
   value,
   handleValue,
+  teste
 }) {
   const handleChange = (e) => {
     handleValue(e.target.value);
@@ -15,6 +16,7 @@ export default function TextField({
     <div className={styles.text_field}>
       <label>{label}</label>
       <input
+        maxLength={teste}
         required
         type={type}
         placeholder={placeholder}

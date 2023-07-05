@@ -38,7 +38,7 @@ export default function Form({ onSubmit }) {
     if (cvc.length !== 3) {
       setError((prevError) => ({
         ...prevError,
-        cvc: "O número cvc precisa ter 3 dígitos.",
+        cvc: "O cvc precisa ter 3 dígitos.",
       }));
     } else {
       setError((prevError) => ({
@@ -66,12 +66,6 @@ export default function Form({ onSubmit }) {
     if (number.length === 16 && cvc.length === 3) {
       onSubmit();
     }
-
-    // setName("");
-    // setNumber("");
-    // setMonth("");
-    // setYear("");
-    // setCvc("");
   };
 
   return (
@@ -85,7 +79,7 @@ export default function Form({ onSubmit }) {
           handleValue={(value) => setName(value)}
         />
         <TextField
-          className={styles.teste}
+          teste={16}
           type="number"
           label="CARD NUMBER"
           value={number}
@@ -117,7 +111,7 @@ export default function Form({ onSubmit }) {
               onChange={(e) => setCvc(e.target.value)}
             />
             {error.cvc && (
-              <span className={styles.teste} style={{ color: "red" }}>
+              <span className={styles.cvc_error} style={{ color: "red" }}>
                 {error.cvc}
               </span>
             )}

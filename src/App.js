@@ -1,14 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CardPage from "pages/CardPage";
+import { MyProvider } from "components/context/Provider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<CardPage />} />
-      </Routes>
-    </BrowserRouter>
+    <MyProvider>
+      <CardPage />
+    </MyProvider>
   );
 }
 
