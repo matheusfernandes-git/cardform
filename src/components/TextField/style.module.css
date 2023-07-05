@@ -2,14 +2,16 @@
     margin-top: 20px;
 }
 
-.smaller_text_field .text_field input {
-    width: 100px;
-}
-
 input{
     padding: 10px;
     border-radius: 7px;
     width: 420px;
     border: none;
     border: 1px solid #00000025;
+}
+
+@media(max-width: 480px){
+    input{
+        width: 310px;
+    } 
 }

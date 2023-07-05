@@ -123,7 +123,7 @@ export default function Form({ onSubmit }) {
             )}
           </div>
         </div>
-        <button className="mt-4" type="submit">
+        <button className={styles.btn_submit} type="submit">
           Confirm
         </button>
       </form>

@@ -79,39 +79,105 @@
     justify-content: flex-end;
 }
 
-@media(max-width: 768px){
+@media(max-width: 448px) {
     .container{
-        margin: auto;
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px;
     }
 
     .card{
-        width: 400px;
-        border-radius: 15px;
-    }
-
-    .container_extras{
-        width: 342px;
-    }
-
-    .infos{
-        width: 340px;
+        width: 290px;
+        background-size: contain;
+        background-position: center;
+        z-index: 100;
     }
 
     .back_card{
+        margin-top: -100px;
+        width: 290px;
+        background-size: contain;
         background-position: center;
-        width: 400px;
-        border-radius: 15px;
+        left: 25%
+    }
+
+    .container_extras{
+        width: 260px;
+        margin-top: 60px;
+    } 
+
+    .div_extra{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .div_extra2{
+        width: 20px;
+        height: 20px;
+    }
+
+    h2{
+        font-size: 1.3rem;
+    }
+
+    .infos{
+        width: 260px;
+        margin-top: 80px;
+    }
+
+    .infos span{
+        font-size: 0.9em;
+    }
+} 
+
+@media (min-width: 448px) and (max-width: 768px){
+    .container{
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 540px;
+    }
+
+    .card{
+        width: 350px;
+        background-size: contain;
+        background-position: center;
+        z-index: 100;
+    }
+
+    .back_card{
+        margin-top: -120px;
+        width: 350px;
+        background-size: contain;
+        background-position: center;
+        left: 25%
+    }
+
+    .container_extras{
+        width: 310px;
+        margin-top: 45px;
+    } 
+
+    .div_extra{
+        width: 35px;
+        height: 35px;
+    }
+    
+    .div_extra2{
+        width: 25px;
+        height: 25px;
+    }
+
+    .infos{
+        width: 310px;
+        margin-top: 100px;
     }
 }
 
-@media(max-width: 1200px){
-    .container{
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
-    }
-
+@media(min-width: 768px) and (max-width: 1220px){
     .card{
         z-index: 100;
         top: 23% ;
@@ -119,7 +185,7 @@
     }
 
     .back_card{
-        top: 4%;
+        top: 5%;
         left: 30%
     }
 }

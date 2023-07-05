@@ -17,7 +17,7 @@ export default function CardPage() {
   //   cvc: ""
   // });
 
-  const handleGoBack = (value) => {
+  const handleGoBack = () => {
     setIsFormSubmitted(!isFormSubmitted);
     //   setFormData({
     //   name: "",
@@ -30,31 +30,27 @@ export default function CardPage() {
 
   return (
     <MyProvider>
-      <section>
-        <div className={styles.container_page}>
-          <div className={styles.container_card}></div>
-          {!isFormSubmitted ? (
-            <div className={styles.container_form_page}>
-              <div>
-                <Card />
-                <Form onSubmit={() => setIsFormSubmitted(!isFormSubmitted)} />
-              </div>
+      <section className={styles.container_page}>
+        <div className={styles.container_card}></div>
+        {!isFormSubmitted ? (
+          <div className={styles.container_form_page}>
+            <Card />
+            <Form onSubmit={() => setIsFormSubmitted(!isFormSubmitted)} />
+          </div>
+        ) : (
+          <section>
+            <Card />
+            <div className={styles.container_finished}>
+              <img src={imgComplete} alt="ícone de completo" />
+              <h1>THANK YOU!</h1>
+              <p>We've added your card details</p>
+              <button className={styles.back_button} onClick={handleGoBack}>
+                <BiArrowBack size={22} />
+                Voltar
+              </button>
             </div>
-          ) : (
-            <section>
-              <Card />
-              <div className={styles.container_finished}>
-                <img src={imgComplete} alt="ícone de completo" />
-                <h1>THANK YOU!</h1>
-                <p>We've added your card details</p>
-                <button className={styles.back_button} onClick={handleGoBack}>
-                  <BiArrowBack size={22} />
-                  Voltar
-                </button>
-              </div>
-            </section>
-          )}
-        </div>
+          </section>
+        )}
       </section>
     </MyProvider>
   );

@@ -37,7 +37,7 @@
     text-decoration: none;
     background-color: rgb(68, 0, 68);
     color: #fff;
-    padding:  15px 100px;
+    padding: 15px 100px;
     border-radius: 7px;
     border: none;
     gap: 8px;
@@ -47,31 +47,108 @@
     opacity: 0.8;
 }
 
-@media(max-width: 768px){
-    
-}
-
-@media(max-width: 1200px){
+@media(max-width: 448px) {
     .container_page{
         flex-direction: column;
     }
 
     .container_card{
         width: 100%;
-        height: 360px;
+        height: 280px;
+    }
+
+    .container_form_page{
+        padding-top: 50px;
     }
 
     .container_finished{
         position: initial;
-        padding-top: 130px;
+        padding-top: 150px;
         gap: 27px;
     }
-    
+
     .container_finished h1{
-        font-size: 50px;
+        font-size: 2.3rem;
+    }   
+
+    .container_finished p{
+        width: 10em;
+        text-align: center;
+        font-size: 1.5rem;
+    } 
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media(min-width: 448px) and (max-width: 768px){
+    .container_page{
+        flex-direction: column;
+    }
+
+    .container_card{
+        width: 100%;
+        height: 320px;
+    }
+
+    .container_finished{
+        position: initial;
+        padding-top: 200px;
+        gap: 27px;
+    }
+
+    .container_finished h1{
+        font-size: 2.3rem;
+    }   
+
+    .container_finished p{
+        width: 10em;
+        text-align: center;
+        font-size: 1.5rem;
+    } 
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 100px; */
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1220px){
+    .container_page{
+        flex-direction: column;
     }
     
-    .container_finished p{
-        font-size: 30px;
+    .container_card{
+        width: 100%;
+        height: 360px;
     }
+
+    .container_form_page{
+        padding-top: 50px;
+    }
+ 
+    .container_finished{
+        position: initial;
+        padding-top: 200px;
+        gap: 27px;
+    }
+
+    .container_finished h1{
+        font-size: 2.6rem;
+    }   
+
+    .container_finished p{
+        font-size: 1.4rem;
+    }  
+
+    .container_form_page{
+        margin-top: 20px;
+    }
+
 }
