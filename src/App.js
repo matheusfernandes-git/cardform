@@ -1,4 +1,3 @@
-import "./App.css";
 import CardPage from "pages/CardPage";
 import { MyProvider } from "components/context/Provider";
 
