@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styles from "./style.module.css";
+import { MyContext } from "components/context";
 
 export default function TextField({
   type,
@@ -6,8 +8,10 @@ export default function TextField({
   placeholder,
   value,
   handleValue,
-  teste
+  isError
 }) {
+  const { error } = useContext(MyContext);
+  console.log(error.number);
   const handleChange = (e) => {
     handleValue(e.target.value);
   };
@@ -16,7 +20,7 @@ export default function TextField({
     <div className={styles.text_field}>
       <label>{label}</label>
       <input
-        maxLength={teste}
+        className={isError && styles.input_error}
         required
         type={type}
         placeholder={placeholder}

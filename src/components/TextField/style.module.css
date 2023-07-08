@@ -10,6 +10,14 @@ input{
     border: 1px solid #00000025;
 }
 
+input:focus{
+    outline: 1px solid rgba(128, 0, 128, 0.897)
+}
+
+.input_error{
+    outline: 2px solid red;
+}
+
 @media(max-width: 448px){
     input{
         width: 310px;

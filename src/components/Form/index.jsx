@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import { MyContext } from "components/context";
 import DateInput from "components/DateInput";
+import { useForm } from "react-hook-form";
 
 export default function Form({ onSubmit }) {
   const {
@@ -11,14 +12,16 @@ export default function Form({ onSubmit }) {
     month,
     year,
     cvc,
+    error,
     setName,
     setNumber,
     setMonth,
     setYear,
     setCvc,
     setShowSlash,
+    setError,
   } = useContext(MyContext);
-  const [error, setError] = useState({});
+  const { register } = useForm();
 
   const validateCardNumber = () => {
     if (number.length !== 16) {
@@ -79,10 +82,10 @@ export default function Form({ onSubmit }) {
           handleValue={(value) => setName(value)}
         />
         <TextField
-          teste={16}
           type="number"
           label="CARD NUMBER"
           value={number}
+          isError={error.number}
           placeholder="ex 1234 5678 9123 0000"
           handleValue={(value) => setNumber(value)}
         />
@@ -103,7 +106,8 @@ export default function Form({ onSubmit }) {
           <div className={styles.container_cvc}>
             <label>CVC</label>
             <input
-              required
+              className={error.cvc && styles.input_error}
+              {...register("name", { required: "O campo nome é obrigatório" })}
               type="number"
               label="CVC"
               value={cvc}

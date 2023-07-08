@@ -8,6 +8,7 @@ export const MyProvider = ({ children }) => {
   const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
   const [showSlash, setShowSlash] = useState(false);
+  const [error, setError] = useState({});
 
   return (
     <MyContext.Provider
@@ -23,11 +24,12 @@ export const MyProvider = ({ children }) => {
         cvc,
         setCvc,
         showSlash,
-        setShowSlash
+        setShowSlash,
+        error,
+        setError,
       }}
     >
       {children}
     </MyContext.Provider>
   );
 };
-
